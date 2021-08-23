@@ -16,12 +16,6 @@
           "description": "Name of the Topic"
         }
       },
-      "serviceBusSubscriptionName": {
-        "type": "string",
-        "metadata": {
-          "description": "Name of the Subscription"
-        }
-      },
       "location": {
         "type": "string",
         "defaultValue": "[resourceGroup().location]",
