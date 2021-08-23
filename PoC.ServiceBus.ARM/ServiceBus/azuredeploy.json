@@ -31,7 +31,7 @@
         "type": "Microsoft.ServiceBus/namespaces",
         "location": "[parameters('location')]",
         "sku": {
-          "name": "Basic"
+          "name": "Standard"
         },
         "properties": {},
         "resources": [
