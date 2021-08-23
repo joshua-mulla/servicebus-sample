@@ -1,0 +1,24 @@
+# Starter pipeline
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- none
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Pay-As-You-Go (7dd4e028-2c57-4b8c-86fa-f14ea18180a5)'
+    subscriptionId: '7dd4e028-2c57-4b8c-86fa-f14ea18180a5'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'jmulla-poc-servicebus-rg'
+    location: 'West US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'PoC.ServiceBus.ARM/ServiceBus/azuredeploy.json'
+    deploymentMode: 'Incremental'
